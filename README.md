@@ -11,7 +11,11 @@ designing a simple JSON file in the LWC and passing it to the `TableauCRMQueryHe
 |Key                            |Value                                                      |Type                               |Required                           |
 |-------------------------------|-----------------------------------------------------------|-----------------------------------|-----------------------------------|
 |datasetName                    |The API name of the Tableau CRM dataset to be queried      |String                             |*Yes*                              |
-|fields                         |An array of object which can contain the [following values](###field-parameter-reference) to define the fields to query      |Array       |*Yes*        |
+|fields                         |An array of objects which can contain the [following values](#field-parameter-reference) to define the fields to query      |Array(Object)       |*Yes*        |
+|filter          |Defines a filter for the query, ex: `'FieldName' == "foo"`. Noties the single quotes around *FieldName* and the double quotes around *foo*? Those are required for the query filter to function properyly     |String                               |*No*                           |
+|groupBy                 |Defines a group by statement for the query. You may group by one or many fields defined in the query, or you may also define the group by statement as `["all"]` to group by all.                   |Array(String)                               |*No*                           |
+|queryLimit           |Defines a limit value for the query. (Max limit: 10,000)                      |Integer                               |*No*                           |
+|stream                            |Defines a custom value for the stream variable, ex. `q = load "xyz"`, `x = load "xyz"`, `y = load "xyz"`, etc. If not defined, the default value is `q`.                     |String (Probably should be a single char)                               |No                           |
 
 ### Field Parameter Reference
 |Key                            |Value                                                      |Type                               |Required                           |
