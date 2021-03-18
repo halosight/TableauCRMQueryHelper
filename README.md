@@ -4,10 +4,11 @@ This helper class enables you to easily dynamically generate SAQL to query Table
 
 ## How to design queries in JavaScript
 
-The main function of this component is to extend the ability to query Tableau CRM datasets from an LWC's javascript. This can be done by
-designing a simple JSON file in the LWC and passing it to the `TableauCRMQueryHelper.TableauCRMQueryBuilder` Apex class as a parameter.
+The main function of this component is to extend the ability to query Tableau CRM datasets to Lightning Web Components.
 
 ### Tutorial
+
+*Before starting the tutorial, you will need to first import the two Apex classes included in this repository into your own Salesforce org.*
 
 1. Import the TableauCRMQueryHelper class reference into your project:
 ```
@@ -58,7 +59,7 @@ q = limit q 1;
 ```
 
 ### Query Response
-The response variable used above: `const resultJson = JSON.parse(result.result);`, contains loads of useful information while using and debugging this helper. Primarily, the generated query is accessible by using the `query` key. For example, `console.log(resultJson.query);` would log the generated SAQL query to the console. Additonally, the `responseTime` key is useful to analyzing how effecient your query is running.
+The response variable used above: `const resultJson = JSON.parse(result.result);`, contains loads of useful information while using and debugging this helper. Primarily, the generated query is accessible by using the `query` key. For example, `console.log(resultJson.query);` would log the generated SAQL query to the console. Additonally, the `responseTime` key is useful for analyzing how effecient your query is running.
 
 ### Configuration Reference
 |Key                            |Value                                                      |Type                               |Required                           |
