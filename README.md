@@ -1,6 +1,6 @@
 # Tableau CRM Query Helper
 
-This helper class enables you to quickly and easily query Tableau CRM datasets directly from a native Lightning Web Component.
+This helper class enables you to easily dynamically generate SAQL to query Tableau CRM datasets directly from a native Lightning Web Component.
 
 ## How to design queries in JavaScript
 
