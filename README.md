@@ -1,10 +1,24 @@
-# Salesforce DX Project: Next Steps
+# Tableau CRM Query Helper
 
-Now that you’ve created a Salesforce DX project, what’s next? Here are some documentation resources to get you started.
+This helper class enables you to quickly and easily query Tableau CRM datasets directly from a native Lightning Web Component.
 
-## How Do You Plan to Deploy Your Changes?
+## How to design queries in JavaScript
 
-Do you want to deploy a set of changes, or create a self-contained application? Choose a [development model](https://developer.salesforce.com/tools/vscode/en/user-guide/development-models).
+The main function of this component is to extend the ability to query Tableau CRM datasets from an LWC's javascript. This can be done by
+designing a simple JSON file in the LWC and passing it to the `TableauCRMQueryHelper.TableauCRMQueryBuilder` Apex class as a parameter.
+
+### Configuration Reference
+|Key                            |Value                                                      |Type                               |Required                           |
+|-------------------------------|-----------------------------------------------------------|-----------------------------------|-----------------------------------|
+|datasetName                    |The API name of the Tableau CRM dataset to be queried      |String                             |*Yes*                              |
+|fields                         |An array of object which can contain the [following values](###field-parameter-reference) to define the fields to query      |Array       |*Yes*        |
+
+### Field Parameter Reference
+|Key                            |Value                                                      |Type                               |Required                           |
+|-------------------------------|-----------------------------------------------------------|-----------------------------------|-----------------------------------|
+|apiName                    |The API name of the Dataset Field      |String                             |*Yes*                              |
+|alias                         |An alias to rename the apiName field      |String       |*No*        |
+|aggregate                         |If defined, an aggregate value will be used on the field. Possible values include `min`, `max`, `count`, `avg`, `unique`, and `sum`  |String       |*No*        |
 
 ## Configure Your Salesforce DX Project
 
